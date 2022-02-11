@@ -15,15 +15,18 @@ def custom_len(input_list):
         8
 
     """
+    count = 0
 
-    return 0
+    for item in input_list:
+        count += 1
+    return count
 
 
 # For the next four exercises, you'll need to be clever and think about ways
 # to use list slice assignment.
 #
 # NOTE: these are especially contrived. You wouldn't really want
-# to typically append things to a list like this (you'd want to to use the
+# to typically append things to a list  like this (you'd want to to use the
 # list.append() method), but we want you to practice list slicing assignment
 # in different ways so it sticks in your brain.
 
@@ -44,6 +47,8 @@ def custom_append(input_list, value):
 
     """
 
+    temp_item = input_list[-1]
+    input_list[-1:] = [temp_item, value]
     pass
 
 
@@ -62,7 +67,11 @@ def custom_extend(input_list, second_list):
         True
 
     """
-
+    for element in second_list: # go through second list one element at the time
+        temp_item = input_list[-1] # copy the last item of INPUT_LIST into variable
+        input_list[-1:] = [temp_item, element] 
+        # exchange the last item of the INPUT_LIST with 
+        # 2 values - the last item itself and current elemenent of second list
     pass
 
 
@@ -80,6 +89,8 @@ def custom_insert(input_list, index, value):
         True
 
     """
+    input_list[index:index] = [value]
+
 
     pass
 
